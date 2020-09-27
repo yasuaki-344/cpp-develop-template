@@ -16,6 +16,11 @@ ExternalProject_Add(
                -DFRUIT_USES_BOOST=False
 )
 
+# register library
+add_library(di IMPORTED SHARED GLOBAL)
+set_target_properties(di PROPERTIES
+    IMPORTED_LOCATION ${FRUIT_LIB_DIR}/libfruit.so
+)
 
 # register include file path
 include_directories(${FRUIT_INCLUDE_DIR})
