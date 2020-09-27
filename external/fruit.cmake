@@ -8,7 +8,7 @@ set(FRUIT_LIB_DIR ${FRUIT_INSTALL_DIR}/lib)
 
 # external project setting
 ExternalProject_Add(
-    fruit
+    googlefruit
     URL https://github.com/google/fruit/archive/v3.6.0.zip
     PREFIX ${FRUIT_BUILD_DIR}
     CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=${FRUIT_INSTALL_DIR}
@@ -17,8 +17,8 @@ ExternalProject_Add(
 )
 
 # register library
-add_library(di IMPORTED SHARED GLOBAL)
-set_target_properties(di PROPERTIES
+add_library(fruit IMPORTED SHARED GLOBAL)
+set_target_properties(fruit PROPERTIES
     IMPORTED_LOCATION ${FRUIT_LIB_DIR}/libfruit.so
 )
 

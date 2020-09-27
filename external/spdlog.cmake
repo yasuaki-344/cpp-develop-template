@@ -8,7 +8,7 @@ set(SPDLOG_LIB_DIR ${SPDLOG_INSTALL_DIR}/lib)
 
 # external project setting
 ExternalProject_Add(
-    spdlog
+    gabimespdlog
     URL https://github.com/gabime/spdlog/archive/v1.8.0.zip
     PREFIX ${SPDLOG_BUILD_DIR}
     CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=${SPDLOG_INSTALL_DIR}
@@ -17,8 +17,8 @@ ExternalProject_Add(
 
 # register library
 
-add_library(log IMPORTED STATIC GLOBAL)
-set_target_properties(log PROPERTIES
+add_library(spdlog IMPORTED STATIC GLOBAL)
+set_target_properties(spdlog PROPERTIES
     IMPORTED_LOCATION ${SPDLOG_LIB_DIR}/libspdlog.a
 )
 
