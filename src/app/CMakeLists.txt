@@ -28,4 +28,4 @@ aux_source_directory(${PROJECT_SOURCE_DIR}/src SRC_APP)
 add_executable(${PROJECT_NAME} ${SRC_APP})
 
 # Link staticlibraries
-target_link_libraries(${PROJECT_NAME} lib)
+target_link_libraries(${PROJECT_NAME} lib log)

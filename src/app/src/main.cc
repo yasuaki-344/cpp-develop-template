@@ -5,6 +5,7 @@
  */
 
 #include <iostream>
+#include <spdlog/spdlog.h>
 
 #include "SampleClass.h"
 
@@ -12,7 +13,7 @@ int main(int argc, char **argv)
 {
     static_cast<void>(argc);
     static_cast<void>(argv);
-    std::cout << "appplication start" << std::endl;
+    spdlog::info("appplication start");
 
     auto lib = CppDevelopTemplate::lib::SampleClass();
     lib.publicFunction();

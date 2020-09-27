@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.16.3)
 Project(cpp-develop-template)
 
 enable_testing()
+include(external/spdlog.cmake)
 include(external/creal.cmake)
 include(external/fruit.cmake)
 include(external/gtest.cmake)
