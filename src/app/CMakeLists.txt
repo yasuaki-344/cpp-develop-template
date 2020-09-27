@@ -19,7 +19,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Set the directories where include files can be found.
 include_directories(${PROJECT_SOURCE_DIR}/include)
-include_directories(${PROJECT_SOURCE_DIR}/../lib/include)
+include_directories(${CMAKE_SOURCE_DIR}/src/lib/include)
 
 # Set the source files.
 aux_source_directory(${PROJECT_SOURCE_DIR}/src SRC_APP)

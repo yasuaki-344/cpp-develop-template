@@ -3,7 +3,7 @@
  * @brief This is sample unit test.
  * @copyright Copyright (c) 2020 Yasuaki Miyoshi
  */
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
 #include "SampleClass.h"
 

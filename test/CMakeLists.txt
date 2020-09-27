@@ -19,18 +19,16 @@ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -O2")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Set the directories where include files can be found.
-include_directories(${PROJECT_SOURCE_DIR}/googletest)
-include_directories(${PROJECT_SOURCE_DIR}/../src/lib/include)
+include_directories(${CMAKE_SOURCE_DIR}/src/lib/include)
 
 # Set the source files.
-aux_source_directory(${PROJECT_SOURCE_DIR}/googletest TEST_SRC)
 aux_source_directory(${PROJECT_SOURCE_DIR}/sample-test TEST_SRC)
 
 # Build the executable
 add_executable(${PROJECT_NAME} ${TEST_SRC})
 
 # Link staticlibraries
-target_link_libraries(${PROJECT_NAME} lib)
+target_link_libraries(${PROJECT_NAME} lib gtest gtest_main)
 if (UNIX)
     target_link_libraries(${PROJECT_NAME} dl pthread)
 endif ()
