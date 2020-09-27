@@ -4,6 +4,7 @@ Project(cpp-develop-template)
 
 enable_testing()
 include(external/creal.cmake)
+include(external/fruit.cmake)
 include(external/gtest.cmake)
 add_subdirectory(src)
 add_subdirectory(test)
