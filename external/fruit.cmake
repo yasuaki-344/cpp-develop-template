@@ -6,8 +6,6 @@ set(FRUIT_INSTALL_DIR ${PROJECT_SOURCE_DIR}/external-libs/fruit)
 set(FRUIT_INCLUDE_DIR ${FRUIT_INSTALL_DIR}/include)
 set(FRUIT_LIB_DIR ${FRUIT_INSTALL_DIR}/lib)
 
-add_definitions(-DFRUIT_USES_BOOST=False)
-
 # external project setting
 ExternalProject_Add(
     fruit
