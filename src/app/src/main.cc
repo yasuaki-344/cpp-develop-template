@@ -1,3 +1,8 @@
+/**
+ * @file Main.cc
+ * @brief This is sample application.
+ * @copyright Copyright (c) 2020 Yasuaki Miyoshi
+ */
 
 #include <iostream>
 
