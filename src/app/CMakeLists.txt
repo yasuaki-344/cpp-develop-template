@@ -19,9 +19,13 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Set the directories where include files can be found.
 include_directories(${PROJECT_SOURCE_DIR}/include)
+include_directories(${PROJECT_SOURCE_DIR}/../lib/include)
 
 # Set the source files.
 aux_source_directory(${PROJECT_SOURCE_DIR}/src SRC_APP)
 
 # Set build target.
 add_executable(${PROJECT_NAME} ${SRC_APP})
+
+# Link staticlibraries
+target_link_libraries(${PROJECT_NAME} lib)
