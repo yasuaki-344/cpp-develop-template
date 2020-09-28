@@ -22,7 +22,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 include_directories(${CMAKE_SOURCE_DIR}/src/lib/include)
 
 # Set the source files.
-aux_source_directory(${PROJECT_SOURCE_DIR}/sample-test TEST_SRC)
+aux_source_directory(${PROJECT_SOURCE_DIR} TEST_SRC)
 
 # Build the executable
 add_executable(${PROJECT_NAME} ${TEST_SRC})
