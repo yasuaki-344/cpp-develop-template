@@ -10,9 +10,8 @@
 
 #include "IWriter.h"
 
-namespace CppDevelopTemplate
-{
-    fruit::Component<IWriter> getStdoutWriter();
+namespace CppDevelopTemplate {
+fruit::Component<IWriter> getStdoutWriter();
 }
 
 #endif

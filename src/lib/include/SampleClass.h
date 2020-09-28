@@ -8,46 +8,44 @@
 
 #include <vector>
 
-namespace CppDevelopTemplate::lib
-{
-    class SampleClass
-    {
-    public:
-        SampleClass();
+namespace CppDevelopTemplate::lib {
+class SampleClass {
+public:
+    SampleClass();
 
-        /**
+    /**
      * @brief Avoids implicit generation of the copy constructor.
      */
-        SampleClass(const SampleClass &) = delete;
-        /**
+    SampleClass(const SampleClass&) = delete;
+    /**
      * @brief Avoids implicit generation of the move constructor.
      */
-        SampleClass(SampleClass &&) noexcept = delete;
-        /**
+    SampleClass(SampleClass&&) noexcept = delete;
+    /**
      * @brief Default destructor.
      */
-        ~SampleClass() noexcept = default;
+    ~SampleClass() noexcept = default;
 
-    private:
-        /** 1st primitive translation vector. */
-        std::vector<double> privateMember_;
+private:
+    /** 1st primitive translation vector. */
+    std::vector<double> privateMember_;
 
-    public:
-        /**
+public:
+    /**
      * @brief Avoids implicit generation of the copy assignment operator.
      */
-        SampleClass &operator=(const SampleClass &) = delete;
+    SampleClass& operator=(const SampleClass&) = delete;
 
-        /**
+    /**
      * @brief Avoids implicit generation of the move assignment operator.
      */
-        SampleClass &operator=(SampleClass &&) noexcept = delete;
+    SampleClass& operator=(SampleClass&&) noexcept = delete;
 
-    public:
-        void publicFunction();
+public:
+    void publicFunction();
 
-    private:
-        void privateFunction();
-    };
+private:
+    void privateFunction();
+};
 } // namespace CppDevelopTemplate::lib
 #endif

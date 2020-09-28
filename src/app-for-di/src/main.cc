@@ -9,7 +9,7 @@
 int main()
 {
     fruit::Injector<CppDevelopTemplate::ILib> injector(CppDevelopTemplate::getLib);
-    CppDevelopTemplate::ILib *lib(injector);
+    CppDevelopTemplate::ILib* lib(injector);
 
     lib->execute();
     return 0;

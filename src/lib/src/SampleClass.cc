@@ -7,27 +7,25 @@
 
 #include <iostream>
 
-namespace
-{
+namespace {
 }
 
-namespace CppDevelopTemplate::lib
+namespace CppDevelopTemplate::lib {
+/**
+ * @brief Default constructor.
+ */
+SampleClass::SampleClass()
 {
-    /**
-     * @brief Default constructor.
-     */
-    SampleClass::SampleClass()
-    {
-        std::cout << "constructor is called" << std::endl;
-    }
+    std::cout << "constructor is called" << std::endl;
+}
 
-    void SampleClass::publicFunction()
-    {
-        privateFunction();
-    }
+void SampleClass::publicFunction()
+{
+    privateFunction();
+}
 
-    void SampleClass::privateFunction()
-    {
-        privateMember_.push_back(1.0);
-    }
+void SampleClass::privateFunction()
+{
+    privateMember_.push_back(1.0);
+}
 } // namespace CppDevelopTemplate::lib
