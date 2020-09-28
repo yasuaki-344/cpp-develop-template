@@ -1,13 +1,13 @@
 /**
- * @file LibInterface.h
+ * @file ILib.h
  * @brief This is just examples.
  * @copyright Copyright (c) 2020 Yasuaki Miyoshi.
  */
-#ifndef CPP_DEVELOP_TEMPLATE_DI_LIB_INTERFACE_H
-#define CPP_DEVELOP_TEMPLATE_DI_LIB_INTERFACE_H
+#ifndef CPP_DEVELOP_TEMPLATE_DI_ILIB_H
+#define CPP_DEVELOP_TEMPLATE_DI_ILIB_H
 
 namespace CppDevelopTemplate {
-class LibInterface {
+class ILib {
 public:
     virtual void execute() = 0;
 };

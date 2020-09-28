@@ -1,15 +1,14 @@
 #include "Lib.h"
 #include <iostream>
 #include <fruit/fruit.h>
-#include "writer/WriterInterface.h"
 #include "writer/StdoutWriter.h"
 
 namespace CppDevelopTemplate {
-class Lib : public LibInterface {
+class Lib : public ILib {
 private:
-    WriterInterface* writer;
+    IWriter* writer;
 public:
-    INJECT(Lib(WriterInterface* writer)) : writer(writer) {}
+    INJECT(Lib(IWriter* writer)) : writer(writer) {}
 
     virtual void execute() override
     {
@@ -18,10 +17,10 @@ public:
     }
 };
 
-fruit::Component<LibInterface> getLibComponent()
+fruit::Component<ILib> getLib()
 {
     return fruit::createComponent()
-        .install(getWriterInterfaceComponent)
-        .bind<LibInterface, Lib>();
+        .install(getStdoutWriter)
+        .bind<ILib, Lib>();
 }
 }

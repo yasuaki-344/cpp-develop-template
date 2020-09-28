@@ -2,7 +2,7 @@
 
 namespace CppDevelopTemplate {
 
-class StdoutWriter : public WriterInterface {
+class StdoutWriter : public IWriter {
 public:
     INJECT(StdoutWriter()) = default;
 
@@ -12,8 +12,9 @@ public:
     }
 };
 
-fruit::Component<WriterInterface> getWriterInterfaceComponent()
+fruit::Component<IWriter> getStdoutWriter()
 {
-    return fruit::createComponent().bind<WriterInterface, StdoutWriter>();
+    return fruit::createComponent()
+        .bind<IWriter, StdoutWriter>();
 }
 }

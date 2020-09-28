@@ -1,17 +1,17 @@
 /**
- * @file Lib.h
+ * @file StdoutWriter.h
  * @brief This is just examples.
  * @copyright Copyright (c) 2020 Yasuaki Miyoshi.
  */
-#ifndef CPP_DEVELOP_TEMPLATE_LIB_WRITER_INTREFACE_H
-#define CPP_DEVELOP_TEMPLATE_LIB_WRITER_INTREFACE_H
+#ifndef CPP_DEVELOP_TEMPLATE_DI_LIB_STDOUT_WRITER_H
+#define CPP_DEVELOP_TEMPLATE_DI_LIB_STDOUT_WRITER_H
 
 #include <fruit/fruit.h>
 
-#include "WriterInterface.h"
+#include "IWriter.h"
 
 namespace CppDevelopTemplate {
-fruit::Component<WriterInterface> getWriterInterfaceComponent();
+fruit::Component<IWriter> getStdoutWriter();
 }
 
 #endif
