@@ -4,16 +4,28 @@
 #include <iostream>
 
 namespace CppDevelopTemplate {
+/**
+ * @brief ライブラリのインターフェースの実装
+ *
+ */
 class Lib : public ILib {
 private:
     IWriter* writer;
 
 public:
+    /**
+     * @brief Construct a new Lib object
+     *
+     */
     INJECT(Lib(IWriter* writer))
         : writer(writer)
     {
     }
 
+    /**
+     * @brief インターフェースの関数の実装
+     *
+     */
     virtual void execute() override
     {
         writer->write("writer output:");
@@ -21,8 +33,13 @@ public:
     }
 };
 
+/**
+ * @brief Get the Lib object
+ *
+ * @return fruit::Component<ILib>
+ */
 fruit::Component<ILib> getLib()
 {
     return fruit::createComponent().install(getStdoutWriter).bind<ILib, Lib>();
 }
-} // namespace CppDevelopTemplate
+}

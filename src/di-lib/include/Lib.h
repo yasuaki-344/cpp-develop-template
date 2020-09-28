@@ -11,6 +11,11 @@
 #include "ILib.h"
 
 namespace CppDevelopTemplate {
+/**
+ * @brief Get the Lib object
+ *
+ * @return fruit::Component<ILib>
+ */
 fruit::Component<ILib> getLib();
 }
 

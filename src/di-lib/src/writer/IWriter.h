@@ -9,9 +9,18 @@
 #include <iostream>
 
 namespace CppDevelopTemplate {
+/**
+ * @brief 内部クラスのインターフェース
+ *
+ */
 class IWriter {
 public:
+    /**
+     * @brief 指定の文字列を出力する
+     *
+     * @param s 入力の例
+     */
     virtual void write(std::string s) = 0;
 };
-} // namespace CppDevelopTemplate
+}
 #endif

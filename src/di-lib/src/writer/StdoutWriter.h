@@ -11,6 +11,11 @@
 #include "IWriter.h"
 
 namespace CppDevelopTemplate {
+/**
+ * @brief Get the Stdout Writer object
+ *
+ * @return fruit::Component<IWriter>
+ */
 fruit::Component<IWriter> getStdoutWriter();
 }
 

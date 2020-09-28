@@ -7,9 +7,17 @@
 #define CPP_DEVELOP_TEMPLATE_DI_ILIB_H
 
 namespace CppDevelopTemplate {
+/**
+ * @brief ライブラリのインターフェース.
+ *
+ */
 class ILib {
 public:
+    /**
+     * @brief サンプルの関数
+     *
+     */
     virtual void execute() = 0;
 };
-} // namespace CppDevelopTemplate
+}
 #endif
