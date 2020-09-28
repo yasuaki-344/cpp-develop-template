@@ -8,10 +8,12 @@
 
 #include <iostream>
 
-namespace CppDevelopTemplate {
-class IWriter {
-public:
-    virtual void write(std::string s) = 0;
-};
-}
+namespace CppDevelopTemplate
+{
+    class IWriter
+    {
+    public:
+        virtual void write(std::string s) = 0;
+    };
+} // namespace CppDevelopTemplate
 #endif

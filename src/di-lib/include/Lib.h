@@ -10,9 +10,9 @@
 
 #include "ILib.h"
 
-namespace CppDevelopTemplate {
-fruit::Component<ILib> getLib();
+namespace CppDevelopTemplate
+{
+    fruit::Component<ILib> getLib();
 }
 
 #endif
-
