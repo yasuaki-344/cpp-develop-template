@@ -18,7 +18,7 @@ public:
      *
      * @param s
      */
-    virtual void write(std::string s) override { std::cout << s; }
+    void write(std::string s) override { std::cout << s; }
 };
 
 /**

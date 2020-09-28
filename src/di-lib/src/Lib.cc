@@ -26,7 +26,7 @@ public:
      * @brief インターフェースの関数の実装
      *
      */
-    virtual void execute() override
+    void execute() override
     {
         writer->write("writer output:");
         std::cout << "Hello world!!!" << std::endl;
