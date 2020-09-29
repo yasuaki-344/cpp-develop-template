@@ -4,7 +4,7 @@ Project(cpp-develop-template)
 
 enable_testing()
 include(external/spdlog.cmake)
-include(external/creal.cmake)
+include(external/cereal.cmake)
 include(external/fruit.cmake)
 include(external/gtest.cmake)
 add_subdirectory(src)
