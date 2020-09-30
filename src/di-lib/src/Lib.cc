@@ -17,11 +17,12 @@ public:
      * @brief Construct a new Lib object
      *
      */
-    INJECT(Lib(IWriter* writer))
+    Lib(IWriter* writer)
         : writer(writer)
     {
     }
 
+    using Inject = Lib(IWriter*);
     /**
      * @brief インターフェースの関数の実装
      *

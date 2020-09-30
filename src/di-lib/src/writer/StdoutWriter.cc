@@ -11,8 +11,9 @@ public:
      * @brief Construct a new StdoutWriter object
      *
      */
-    INJECT(StdoutWriter()) = default;
+    StdoutWriter() = default;
 
+    using Inject = StdoutWriter();
     /**
      * @brief 内部インターフェースのメソッドの実装
      *
