@@ -3,8 +3,9 @@
  * @brief This is sample unit test.
  * @copyright Copyright (c) 2020 Yasuaki Miyoshi
  */
-#include <gtest/fakeit.hpp>
 #include <gtest/gtest.h>
+
+#include <gtest/fakeit.hpp>
 
 #include "Lib.h"
 #include "StdoutWriter.h"
