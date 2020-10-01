@@ -11,25 +11,7 @@
 #include "StdoutWriter.h"
 
 namespace {
-fruit::Component<CppDevelopTemplate::IWriter> getMockWriter()
-{
-    static fakeit::Mock<CppDevelopTemplate::IWriter> mock;
-    fakeit::Fake(Method(mock, write));
-    return fruit::createComponent().bindInstance(mock.get());
-}
-
-fruit::Component<CppDevelopTemplate::ILib> getMainComponent()
-{
-    return fruit::createComponent()
-        .replace(CppDevelopTemplate::getStdoutWriter)
-        .with(getMockWriter)
-        .install(CppDevelopTemplate::getLib);
-}
-
-fruit::Injector<CppDevelopTemplate::ILib> createInjector()
-{
-    return fruit::Injector<CppDevelopTemplate::ILib>(getMainComponent);
-}
+static fakeit::Mock<CppDevelopTemplate::IWriter> mock;
 
 /**
  * @brief This class derives a class from testing::Test
@@ -60,14 +42,41 @@ protected:
      */
     virtual void TearDown() override
     {
+        mock.Reset();
     }
 };
+
+/**
+ * @brief Get the Mock Writer object
+ *
+ * @return fruit::Component<CppDevelopTemplate::IWriter>
+ */
+fruit::Component<CppDevelopTemplate::IWriter> getMockWriter()
+{
+    return fruit::createComponent().bindInstance(mock.get());
+}
+
+/**
+ * @brief Get the Lib Component object
+ *
+ * @return fruit::Component<CppDevelopTemplate::ILib>
+ */
+fruit::Component<CppDevelopTemplate::ILib> getLibComponent()
+{
+    return fruit::createComponent()
+        .replace(CppDevelopTemplate::getStdoutWriter)
+        .with(getMockWriter)
+        .install(CppDevelopTemplate::getLib);
+}
+
 } /* unnamed namespace */
 
 TEST_F(DiLibTest, ExecutesCorrectly)
 {
-    fruit::Injector<CppDevelopTemplate::ILib> injector = createInjector();
-    auto target = injector.get<CppDevelopTemplate::ILib*>();
+    using namespace CppDevelopTemplate;
+    fakeit::Fake(Method(mock, write));
+
+    auto target = fruit::Injector<ILib>(getLibComponent).get<ILib*>();
     target->execute();
     auto expect = 0;
     auto actual = 0;
