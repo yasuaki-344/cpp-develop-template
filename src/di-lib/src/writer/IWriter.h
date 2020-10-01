@@ -20,7 +20,7 @@ public:
      *
      * @param s 入力の例
      */
-    virtual void write(std::string s) = 0;
+    virtual void write(const std::string &s) = 0;
 };
 }
 #endif

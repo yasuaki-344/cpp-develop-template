@@ -19,7 +19,7 @@ public:
      *
      * @param s
      */
-    void write(std::string s) override { std::cout << s; }
+    void write(const std::string &s) override { std::cout << s; }
 };
 
 /**
