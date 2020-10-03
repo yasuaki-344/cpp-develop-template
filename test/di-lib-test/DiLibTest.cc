@@ -76,7 +76,8 @@ TEST_F(DiLibTest, ExecutesCorrectly)
     using namespace CppDevelopTemplate;
     fakeit::Fake(Method(mock, write));
 
-    auto target = fruit::Injector<ILib>(getLibComponent).get<ILib*>();
+    fruit::Injector<ILib> injector(getLibComponent);
+    auto target = injector.get<ILib*>();
     target->execute();
     auto expect = 0;
     auto actual = 0;
