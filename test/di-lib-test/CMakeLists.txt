@@ -27,6 +27,7 @@ aux_source_directory(${PROJECT_SOURCE_DIR} TEST_SRC)
 
 # Build the executable
 add_executable(${PROJECT_NAME} ${TEST_SRC})
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 17)
 
 # Link staticlibraries
 target_link_libraries(${PROJECT_NAME} di-lib fruit gtest gtest_main)

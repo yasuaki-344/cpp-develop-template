@@ -10,7 +10,7 @@ endif ()
 if (CMAKE_BUILD_TYPE MATCHES Release)
     add_definitions(-DNDEBUG)
 endif ()
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic --std=c++17")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_C_FLAGS} -g -O0")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_C_FLAGS} -O2")
 
@@ -26,6 +26,7 @@ aux_source_directory(${PROJECT_SOURCE_DIR}/src SRC_APP)
 
 # Set build target.
 add_executable(${PROJECT_NAME} ${SRC_APP})
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 17)
 
 # Link staticlibraries
 target_link_libraries(${PROJECT_NAME} di-lib spdlog fruit)
