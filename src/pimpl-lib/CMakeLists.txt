@@ -10,7 +10,7 @@ endif ()
 if (CMAKE_BUILD_TYPE MATCHES Release)
     add_definitions(-DNDEBUG)
 endif ()
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic --std=c++17")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_C_FLAGS} -g -O0")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_C_FLAGS} -O2")
 
@@ -25,3 +25,4 @@ aux_source_directory(${PROJECT_SOURCE_DIR}/src SRC_LIB)
 
 # build target
 add_library(${PROJECT_NAME} STATIC ${SRC_LIB})
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 17)

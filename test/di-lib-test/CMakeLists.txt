@@ -11,7 +11,7 @@ endif ()
 if (NOT CMAKE_BUILD_TYPE MATCHES Release)
     add_definitions(-DNDEBUG)
 endif ()
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic --std=c++17")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS} -g -O0")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -O2")
 
@@ -27,6 +27,7 @@ aux_source_directory(${PROJECT_SOURCE_DIR} TEST_SRC)
 
 # Build the executable
 add_executable(${PROJECT_NAME} ${TEST_SRC})
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 17)
 
 # Link staticlibraries
 target_link_libraries(${PROJECT_NAME} di-lib fruit gtest gtest_main)
