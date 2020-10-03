@@ -20,6 +20,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Set the directories where include files can be found.
 include_directories(${CMAKE_SOURCE_DIR}/src/di-lib/include)
+include_directories(${CMAKE_SOURCE_DIR}/src/di-lib/src)
 include_directories(${CMAKE_SOURCE_DIR}/src/di-lib/src/writer)
 
 # Set the source files.

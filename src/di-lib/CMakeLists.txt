@@ -19,10 +19,12 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
 # Set the directories where include file can be found.
 include_directories(${PROJECT_SOURCE_DIR}/include)
+include_directories(${PROJECT_SOURCE_DIR}/src)
 
 # set the source files.
 aux_source_directory(${PROJECT_SOURCE_DIR}/src SRC_LIB)
 aux_source_directory(${PROJECT_SOURCE_DIR}/src/writer SRC_LIB)
+aux_source_directory(${PROJECT_SOURCE_DIR}/src/logger SRC_LIB)
 
 # build target
 add_library(${PROJECT_NAME} STATIC ${SRC_LIB})
