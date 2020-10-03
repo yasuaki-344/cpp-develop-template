@@ -40,5 +40,5 @@ TEST_F(PimpleLibTest, ExecutesCorrectly)
 {
     CppDevelopTemplate::PimplLib target;
     target.execute();
-    ASSERT_EQ(5, target.execute());
+    ASSERT_EQ(1, target.execute());
 }
