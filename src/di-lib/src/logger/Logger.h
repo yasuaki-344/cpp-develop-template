@@ -13,21 +13,21 @@
 
 namespace CppDevelopTemplate {
 /**
- * @brief Get the logger object which outputs to stdout.
+ * @brief Get the component that provides the logger object which outputs to stdout.
  *
  * @return Component that provides an implementation of spdlog::logger.
  */
 fruit::Component<spdlog::logger> getStdoutLogger();
 
 /**
- * @brief Get the logger object which outputs to file.
+ * @brief Get the component that provides the logger object which outputs to file.
  *
  * @return Component that provides an implementation of spdlog::logger.
  */
 fruit::Component<spdlog::logger> getBasicFileLogger();
 
 /**
- * @brief Get the logger object which outputs to rotating log files.
+ * @brief Get the component that provides the logger object which outputs to rotating log files.
  *
  * @return Component that provides an implementation of spdlog::logger.
  */
