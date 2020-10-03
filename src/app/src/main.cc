@@ -15,7 +15,7 @@ int main(int argc, char** argv)
     static_cast<void>(argv);
     spdlog::info("appplication start");
 
-    auto lib = CppDevelopTemplate::lib::SampleClass();
+    CppDevelopTemplate::lib::SampleClass lib;
     lib.publicFunction();
     return 0;
 }
