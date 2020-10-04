@@ -18,17 +18,17 @@ namespace {
  * @brief This class derives a class from testing::Test
  *        for using the same data configuration for multiple tests.
  */
-class LogSettintsTest : public testing::Test {
+class LogSettingsTest : public testing::Test {
 protected:
     /**
      * @brief Constructor
      */
-    LogSettintsTest() = default;
+    LogSettingsTest() = default;
 
     /**
      * @brief Destructor
      */
-    virtual ~LogSettintsTest() noexcept = default;
+    virtual ~LogSettingsTest() noexcept = default;
 
 protected:
     /**
@@ -47,17 +47,10 @@ protected:
 };
 }
 
-TEST_F(LogSettintsTest, json)
+TEST_F(LogSettingsTest, json)
 {
     CppDevelopTemplate::LogSettings target {
         "AppName", "logs/DILib.log", 1048576 * 5, 3
     };
-    std::ofstream ofs("result.json", std::ios::out);
-    if (ofs) {
-        try {
-            (cereal::JSONOutputArchive(ofs))(cereal::make_nvp("Log", target));
-        } catch (const std::exception& e) {
-            std::cerr << e.what() << '\n';
-        }
-    }
+    target.serializeJson("result.json");
 }

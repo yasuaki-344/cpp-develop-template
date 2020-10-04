@@ -9,8 +9,10 @@
 #ifndef CPP_DEVELOP_TEMPLATE_DI_LIB_LOG_SETTINGS_H
 #define CPP_DEVELOP_TEMPLATE_DI_LIB_LOG_SETTINGS_H
 
+#include <cereal/archives/json.hpp>
 #include <cereal/cereal.hpp>
 #include <cstdint>
+#include <fstream>
 #include <string>
 
 namespace CppDevelopTemplate {
@@ -33,6 +35,40 @@ struct LogSettings {
             CEREAL_NVP(logOutputPath),
             CEREAL_NVP(maxFileSize),
             CEREAL_NVP(maxFiles));
+    }
+
+    /**
+     * @brief Serializes JSON data and outputs to the specified file path.
+     *
+     * @param path Output file path.
+     */
+    void serializeJson(const std::string& path) const
+    {
+        std::ofstream ofs(path, std::ios::out);
+        if (ofs) {
+            try {
+                (cereal::JSONOutputArchive(ofs))(cereal::make_nvp("Log", *this));
+            } catch (const std::exception& e) {
+                std::cerr << e.what() << std::endl;
+            }
+        }
+    }
+
+    /**
+     * @brief Deserialize JSON data from the specified file path.
+     *
+     * @param path File path to read JSON data.
+     */
+    void deserializeJson(const std::string& path)
+    {
+        std::ifstream ifs(path, std::ios::in);
+        if (ifs) {
+            try {
+                (cereal::JSONInputArchive(ifs))(cereal::make_nvp("Log", *this));
+            } catch (const std::exception& e) {
+                std::cerr << e.what() << std::endl;
+            }
+        }
     }
 };
 }
