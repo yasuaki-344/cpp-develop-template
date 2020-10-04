@@ -47,10 +47,19 @@ protected:
 };
 }
 
-TEST_F(LogSettingsTest, json)
+TEST_F(LogSettingsTest, WriteAndReadJsonCorrectly)
 {
-    CppDevelopTemplate::LogSettings target {
+    const std::string jsonFilePath = "result.json";
+    CppDevelopTemplate::LogSettings expect {
         "AppName", "logs/DILib.log", 1048576 * 5, 3
     };
-    target.serializeJson("result.json");
+    expect.serializeJson(jsonFilePath);
+
+    CppDevelopTemplate::LogSettings actual;
+    actual.deserializeJson(jsonFilePath);
+
+    ASSERT_EQ(expect.loggerName, actual.loggerName);
+    ASSERT_EQ(expect.logOutputPath, actual.logOutputPath);
+    ASSERT_EQ(expect.maxFileSize, actual.maxFileSize);
+    ASSERT_EQ(expect.maxFiles, actual.maxFiles);
 }
