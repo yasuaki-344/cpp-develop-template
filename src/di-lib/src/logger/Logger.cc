@@ -14,9 +14,7 @@
 #include "logger/Logger.h"
 
 namespace {
-const std::string StdoutLoggerName("DiLib");
-const std::string BasicFileLoggerName("DiLib file");
-const std::string RotatingLoggerName("DiLib rotating");
+const std::string LoggerName("DiLib");
 const std::string LoggerOutputPath("logs/DILib.log");
 constexpr std::size_t MaxFileSize = 1048576 * 5;
 constexpr std::size_t MaxFiles = 3;
@@ -25,19 +23,19 @@ constexpr std::size_t MaxFiles = 3;
 namespace CppDevelopTemplate {
 fruit::Component<spdlog::logger> getStdoutLogger()
 {
-    auto logger = spdlog::stdout_color_mt(StdoutLoggerName);
+    auto logger = spdlog::stdout_color_mt(LoggerName);
     return fruit::createComponent().bindInstance(*logger);
 }
 
 fruit::Component<spdlog::logger> getBasicFileLogger()
 {
-    auto logger = spdlog::basic_logger_mt(BasicFileLoggerName, LoggerOutputPath);
+    auto logger = spdlog::basic_logger_mt(LoggerName, LoggerOutputPath);
     return fruit::createComponent().bindInstance(*logger);
 }
 
 fruit::Component<spdlog::logger> getRotatingLogger()
 {
-    auto logger = spdlog::rotating_logger_mt(RotatingLoggerName, LoggerOutputPath, MaxFileSize, MaxFiles);
+    auto logger = spdlog::rotating_logger_mt(LoggerName, LoggerOutputPath, MaxFileSize, MaxFiles);
     return fruit::createComponent().bindInstance(*logger);
 }
 }

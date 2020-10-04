@@ -35,6 +35,7 @@ protected:
      */
     virtual void SetUp() override
     {
+        spdlog::drop_all();
     }
 
     /**
