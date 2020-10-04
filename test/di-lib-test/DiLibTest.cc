@@ -1,7 +1,10 @@
 /**
  * @file DiLibTest.cc
- * @brief This is sample unit test.
- * @copyright Copyright (c) 2020 Yasuaki Miyoshi
+ * @brief Implementation of unit test for an implementation of ILib.
+ * @copyright Copyright (c) 2020 Yasuaki Miyoshi.
+ *
+ * This software is released under the MIT License.
+ * see http://opensource.org/licenses/mit-license.php
  */
 #include <gtest/gtest.h>
 
@@ -68,8 +71,7 @@ fruit::Component<CppDevelopTemplate::ILib> getLibComponent()
         .with(getMockWriter)
         .install(CppDevelopTemplate::getLib);
 }
-
-} /* unnamed namespace */
+}
 
 TEST_F(DiLibTest, ExecutesCorrectly)
 {

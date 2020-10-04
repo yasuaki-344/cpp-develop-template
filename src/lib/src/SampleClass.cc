@@ -1,11 +1,14 @@
 /**
  * @file SampleClass.cc
- * @brief This is just example.
+ * @brief Implementation of basic class.
  * @copyright Copyright (c) 2020 Yasuaki Miyoshi.
+ *
+ * This software is released under the MIT License.
+ * see http://opensource.org/licenses/mit-license.php
  */
-#include "SampleClass.h"
-
 #include <iostream>
+
+#include "SampleClass.h"
 
 namespace {
 }
@@ -28,4 +31,4 @@ void SampleClass::privateFunction()
 {
     privateMember_.push_back(1.0);
 }
-} // namespace CppDevelopTemplate::lib
+}

@@ -1,3 +1,11 @@
+/**
+ * @file PimplLib.h
+ * @brief This is just example for PImpl pattern implementation.
+ * @copyright Copyright (c) 2020 Yasuaki Miyoshi.
+ *
+ * This software is released under the MIT License.
+ * see http://opensource.org/licenses/mit-license.php
+ */
 #ifndef CPP_DEVELOP_TEMPLATE_PIMPL_LIB_H
 #define CPP_DEVELOP_TEMPLATE_PIMPL_LIB_H
 
@@ -6,13 +14,13 @@
 
 namespace CppDevelopTemplate {
 /**
- * @brief 実装クラスの前方宣言
+ * @brief forward declaration of the implementation class
  *
  */
 class PimplLibImplementor;
 
 /**
- * @brief 外部公開クラスの宣言
+ * @brief Library interfaces.
  *
  */
 class PimplLib final {

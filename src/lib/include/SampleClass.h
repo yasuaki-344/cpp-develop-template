@@ -1,7 +1,10 @@
 /**
  * @file SampleClass.h
- * @brief This is just examples.
+ * @brief Declaration of basic class.
  * @copyright Copyright (c) 2020 Yasuaki Miyoshi.
+ *
+ * This software is released under the MIT License.
+ * see http://opensource.org/licenses/mit-license.php
  */
 #ifndef CPP_DEVELOP_TEMPLATE_LIB_SAMPLE_CLASS_H
 #define CPP_DEVELOP_TEMPLATE_LIB_SAMPLE_CLASS_H
@@ -10,6 +13,9 @@
 
 namespace CppDevelopTemplate::lib {
 class SampleClass {
+private:
+    std::vector<double> privateMember_;
+
 public:
     SampleClass();
 
@@ -26,10 +32,6 @@ public:
      */
     ~SampleClass() noexcept = default;
 
-private:
-    /** 1st primitive translation vector. */
-    std::vector<double> privateMember_;
-
 public:
     /**
      * @brief Avoids implicit generation of the copy assignment operator.
@@ -42,10 +44,18 @@ public:
     SampleClass& operator=(SampleClass&&) noexcept = delete;
 
 public:
+    /**
+     * @brief This is just example.
+     *
+     */
     void publicFunction();
 
 private:
+    /**
+     * @brief This is just example.
+     *
+     */
     void privateFunction();
 };
-} // namespace CppDevelopTemplate::lib
+}
 #endif

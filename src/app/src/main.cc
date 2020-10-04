@@ -1,20 +1,17 @@
 /**
- * @file Main.cc
- * @brief This is sample application.
- * @copyright Copyright (c) 2020 Yasuaki Miyoshi
+ * @file main.cc
+ * @brief This is just example to use library function.
+ * @copyright Copyright (c) 2020 Yasuaki Miyoshi.
+ *
+ * This software is released under the MIT License.
+ * see http://opensource.org/licenses/mit-license.php
  */
-
 #include <iostream>
-#include <spdlog/spdlog.h>
 
 #include "SampleClass.h"
 
-int main(int argc, char** argv)
+int main()
 {
-    static_cast<void>(argc);
-    static_cast<void>(argv);
-    spdlog::info("appplication start");
-
     CppDevelopTemplate::lib::SampleClass lib;
     lib.publicFunction();
     return 0;

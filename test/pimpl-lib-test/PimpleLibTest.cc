@@ -1,3 +1,11 @@
+/**
+ * @file PimplLibTest.cc
+ * @brief Implementation of unit test for API of the library which is implemented based on PImple idiom.
+ * @copyright Copyright (c) 2020 Yasuaki Miyoshi.
+ *
+ * This software is released under the MIT License.
+ * see http://opensource.org/licenses/mit-license.php
+ */
 #include <gtest/gtest.h>
 
 #include "PimplLib.h"
@@ -34,7 +42,7 @@ protected:
     {
     }
 };
-} /* unnamed namespace */
+}
 
 TEST_F(PimpleLibTest, ExecutesCorrectly)
 {

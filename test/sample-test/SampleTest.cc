@@ -1,7 +1,10 @@
 /**
- * @file Main.cc
- * @brief This is sample unit test.
- * @copyright Copyright (c) 2020 Yasuaki Miyoshi
+ * @file SampleClassTest.cc
+ * @brief Implementation of unit test for simple class.
+ * @copyright Copyright (c) 2020 Yasuaki Miyoshi.
+ *
+ * This software is released under the MIT License.
+ * see http://opensource.org/licenses/mit-license.php
  */
 #include <gtest/gtest.h>
 
@@ -39,11 +42,10 @@ protected:
     {
     }
 };
-} /* unnamed namespace */
+}
 
 TEST_F(SampleTest, ExecutesCorrectly)
 {
-    auto expect = 0;
-    auto actual = 0;
-    ASSERT_EQ(expect, actual);
+    CppDevelopTemplate::lib::SampleClass target;
+    target.publicFunction();
 }

@@ -1,5 +1,14 @@
-#include "PimplLibImplementor.h"
+/**
+ * @file PimplLibImplementor.cc
+ * @brief This is just example for PImpl pattern implementation.
+ * @copyright Copyright (c) 2020 Yasuaki Miyoshi.
+ *
+ * This software is released under the MIT License.
+ * see http://opensource.org/licenses/mit-license.php
+ */
 #include <iostream>
+
+#include "PimplLibImplementor.h"
 
 namespace CppDevelopTemplate {
 

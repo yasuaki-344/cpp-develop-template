@@ -1,6 +1,6 @@
 /**
  * @file StdoutWriter.cc
- * @brief Declaration of the functions to provide an implementation of IWriter.
+ * @brief Implementation of the functions to provide an implementation of IWriter.
  * @copyright Copyright (c) 2020 Yasuaki Miyoshi.
  *
  * This software is released under the MIT License.
@@ -20,7 +20,7 @@ private:
 
 public:
     /**
-     * @brief Initializes a new instance of StdoutWriter
+     * @brief Initializes a new instance of StdoutWriter class
      *        using the specified logger object.
      *
      * @param logger Logger object
