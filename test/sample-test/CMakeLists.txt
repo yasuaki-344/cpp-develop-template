@@ -29,7 +29,7 @@ add_executable(${PROJECT_NAME} ${TEST_SRC})
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 17)
 
 # Link staticlibraries
-target_link_libraries(${PROJECT_NAME} lib gtest gtest_main)
+target_link_libraries(${PROJECT_NAME} lib ${CONAN_LIBS})
 if (UNIX)
     target_link_libraries(${PROJECT_NAME} dl pthread)
 endif ()

@@ -29,4 +29,4 @@ add_executable(${PROJECT_NAME} ${SRC_APP})
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 17)
 
 # Link staticlibraries
-target_link_libraries(${PROJECT_NAME} di-lib spdlog fruit)
+target_link_libraries(${PROJECT_NAME} di-lib ${CONAN_LIBS})

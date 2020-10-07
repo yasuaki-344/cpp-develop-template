@@ -10,9 +10,10 @@
 ## ビルド方法・単体テストの実行
 
 ```shell
-mkdir build
-cd build
-cmake ../
+mkdir build.conan && pushd build.conan
+conan install .. && popd
+mkdir build.cmake && pushd build.cmake
+cmake ..
 cmake --build .
 ```
 
