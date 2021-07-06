@@ -7,19 +7,31 @@
 * 単体テストの作成, 実行
 * アプリケーションのビルド
 
+## 事前設定
+
+### 必要パッケージ
+
+* gcc (C++11対応)
+* cmake
+* conan
+
+### conanの設定変更
+
+```shell
+conan profile update settings.compiler.libcxx=libstdc++11 default
+```
+
 ## ビルド方法・単体テストの実行
 
 ```shell
-mkdir build.conan && pushd build.conan
-conan install .. && popd
-mkdir build.cmake && pushd build.cmake
-cmake ..
-cmake --build .
+conan install -if ./build.conan .
+cmake --build ./build.cmake
 ```
 
 単体テストを実行する場合は, 上記のコマンドを実行後に次のコマンドを実行します.
 
 ```shell
+cd ./build.cmake
 ctest
 ```
 
