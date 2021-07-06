@@ -25,7 +25,7 @@ jobs:
       uses: turtlebrowser/get-conan@main
 
     - name: Modify conan setting
-      run: conan profile update settings.compiler.libcxx=libstdc++11
+      run: conan profile update settings.compiler.libcxx=libstdc++11 default
 
     - name: Install package
       run: conan install -if ${{github.workspace}}/build.conan .
