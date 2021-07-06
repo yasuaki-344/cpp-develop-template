@@ -25,6 +25,7 @@ conan profile update settings.compiler.libcxx=libstdc++11 default
 
 ```shell
 conan install -if ./build.conan .
+cmake -B ./build.cmake
 cmake --build ./build.cmake
 ```
 
